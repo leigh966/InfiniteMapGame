@@ -1,4 +1,4 @@
-package tsi.leigh.infiniteGame;
+package tsi.leigh.infinite.game;
 
 public class Main
 {
