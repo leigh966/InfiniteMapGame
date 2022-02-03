@@ -60,7 +60,7 @@ public class Map
                 currentX--;
                 break;
             default:
-                throw new IllegalArgumentException("Not a valid direction");
+                throw new IllegalArgumentException("'" +direction +"' is not a valid direction");
         }
     }
 
