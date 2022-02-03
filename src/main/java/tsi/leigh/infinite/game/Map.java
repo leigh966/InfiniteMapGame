@@ -7,6 +7,20 @@ public class Map
     private static Hashtable<String, Tile> visitedTiles = new Hashtable<String, Tile>();
     private static int currentX = 0, currentY = 0;
 
+
+    public static void init()
+    {
+        final int START_X = 0;
+        final int START_Y = 0;
+        visitedTiles.put(getKey(START_X,START_Y), new Grass());
+    }
+
+    public static int[] getPosition()
+    {
+        int[] position = {currentX, currentY};
+        return position;
+    }
+
     private static String getKey(int x, int y)
     {
         return Integer.toString(x) + "," + Integer.toString(y);
@@ -53,10 +67,10 @@ public class Map
         Tile newTile = getCurrentTile();
         if(newTile == null) // Not in map
         {
-            // generate tile from old tile
-            // add the tile to map
-            // return newTile.onEntry()
+            newTile = getTile(previousX, previousY).GenerateTile();
+            visitedTiles.put(getKey(currentX, currentY), newTile);
+            return newTile.OnEntry();
         }
-        // newTile.onReturn();
+        return newTile.OnReturn();
     }
 }

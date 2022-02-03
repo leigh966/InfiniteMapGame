@@ -11,4 +11,10 @@ public class Grass extends Tile
     {
         return "You have returned to a familiar stretch of grassland";
     }
+
+    // stub
+    public Tile GenerateTile()
+    {
+        return new Grass();
+    }
 }
