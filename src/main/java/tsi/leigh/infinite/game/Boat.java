@@ -8,9 +8,13 @@ public class Boat extends Tile
         returnString = "Back on the boat";
     }
 
-    // stub
     public Tile GenerateTile()
     {
-        return new Grass();
+        int[] position = Map.getPosition();
+        if(position[0] == 1)
+        {
+            return new BoatLanding();
+        }
+        return new Ocean();
     }
 }

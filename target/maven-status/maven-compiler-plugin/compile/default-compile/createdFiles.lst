@@ -5,4 +5,5 @@ tsi\leigh\infinite\game\Tile.class
 tsi\leigh\infinite\game\Beach.class
 tsi\leigh\infinite\game\Boat.class
 tsi\leigh\infinite\game\BoatLanding.class
+tsi\leigh\infinite\game\Ocean.class
 tsi\leigh\infinite\game\Grass.class

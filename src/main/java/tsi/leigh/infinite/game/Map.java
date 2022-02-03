@@ -4,12 +4,13 @@ import java.util.Hashtable;
 
 public class Map
 {
-    private static Hashtable<String, Tile> visitedTiles = new Hashtable<String, Tile>();
+    private static Hashtable<String, Tile> visitedTiles;
     private static int currentX = 0, currentY = 0;
 
 
     public static String init()
     {
+        visitedTiles = new Hashtable<String, Tile>();
         final int START_X = 0;
         final int START_Y = 0;
         Tile boat = new Boat();

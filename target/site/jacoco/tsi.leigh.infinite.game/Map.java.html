@@ -4,78 +4,79 @@ import java.util.Hashtable;
 
 <span class="nc" id="L5">public class Map</span>
 {
-<span class="fc" id="L7">    private static Hashtable&lt;String, Tile&gt; visitedTiles = new Hashtable&lt;String, Tile&gt;();</span>
+    private static Hashtable&lt;String, Tile&gt; visitedTiles;
 <span class="fc" id="L8">    private static int currentX = 0, currentY = 0;</span>
 
 
     public static String init()
     {
-<span class="fc" id="L13">        final int START_X = 0;</span>
-<span class="fc" id="L14">        final int START_Y = 0;</span>
-<span class="fc" id="L15">        Tile boat = new Boat();</span>
-<span class="fc" id="L16">        visitedTiles.put(getKey(START_X,START_Y), boat);</span>
-<span class="fc" id="L17">        currentX = 0;</span>
-<span class="fc" id="L18">        currentY = 0;</span>
-<span class="fc" id="L19">        return boat.OnEntry();</span>
+<span class="fc" id="L13">        visitedTiles = new Hashtable&lt;String, Tile&gt;();</span>
+<span class="fc" id="L14">        final int START_X = 0;</span>
+<span class="fc" id="L15">        final int START_Y = 0;</span>
+<span class="fc" id="L16">        Tile boat = new Boat();</span>
+<span class="fc" id="L17">        visitedTiles.put(getKey(START_X,START_Y), boat);</span>
+<span class="fc" id="L18">        currentX = 0;</span>
+<span class="fc" id="L19">        currentY = 0;</span>
+<span class="fc" id="L20">        return boat.OnEntry();</span>
     }
 
     public static int[] getPosition()
     {
-<span class="fc" id="L24">        int[] position = {currentX, currentY};</span>
-<span class="fc" id="L25">        return position;</span>
+<span class="fc" id="L25">        int[] position = {currentX, currentY};</span>
+<span class="fc" id="L26">        return position;</span>
     }
 
     private static String getKey(int x, int y)
     {
-<span class="fc" id="L30">        return Integer.toString(x) + &quot;,&quot; + Integer.toString(y);</span>
+<span class="fc" id="L31">        return Integer.toString(x) + &quot;,&quot; + Integer.toString(y);</span>
     }
 
     public static Tile getTile(int x, int y)
     {
-<span class="fc" id="L35">        return visitedTiles.get(getKey(x,y));</span>
+<span class="fc" id="L36">        return visitedTiles.get(getKey(x,y));</span>
     }
 
     public static Tile getCurrentTile()
     {
-<span class="fc" id="L40">        return getTile(currentX, currentY);</span>
+<span class="fc" id="L41">        return getTile(currentX, currentY);</span>
     }
 
     private static void updatePosition(String direction)
             throws IllegalArgumentException
     {
-<span class="fc" id="L46">        direction = direction.toLowerCase();</span>
-<span class="fc bfc" id="L47" title="All 5 branches covered.">        switch (direction)</span>
+<span class="fc" id="L47">        direction = direction.toLowerCase();</span>
+<span class="fc bfc" id="L48" title="All 5 branches covered.">        switch (direction)</span>
         {
             case &quot;north&quot;:
-<span class="fc" id="L50">                currentY++;</span>
-<span class="fc" id="L51">                break;</span>
+<span class="fc" id="L51">                currentY++;</span>
+<span class="fc" id="L52">                break;</span>
             case &quot;east&quot;:
-<span class="fc" id="L53">                currentX++;</span>
-<span class="fc" id="L54">                break;</span>
+<span class="fc" id="L54">                currentX++;</span>
+<span class="fc" id="L55">                break;</span>
             case &quot;south&quot;:
-<span class="fc" id="L56">                currentY--;</span>
-<span class="fc" id="L57">                break;</span>
+<span class="fc" id="L57">                currentY--;</span>
+<span class="fc" id="L58">                break;</span>
             case &quot;west&quot;:
-<span class="fc" id="L59">                currentX--;</span>
-<span class="fc" id="L60">                break;</span>
+<span class="fc" id="L60">                currentX--;</span>
+<span class="fc" id="L61">                break;</span>
             default:
-<span class="fc" id="L62">                throw new IllegalArgumentException(&quot;Not a valid direction&quot;);</span>
+<span class="fc" id="L63">                throw new IllegalArgumentException(&quot;Not a valid direction&quot;);</span>
         }
-<span class="fc" id="L64">    }</span>
+<span class="fc" id="L65">    }</span>
 
     public static String move(String direction)
             throws IllegalArgumentException
     {
-<span class="fc" id="L69">        int previousX = currentX, previousY = currentY;</span>
-<span class="fc" id="L70">        updatePosition(direction);</span>
-<span class="fc" id="L71">        Tile newTile = getCurrentTile();</span>
-<span class="fc bfc" id="L72" title="All 2 branches covered.">        if(newTile == null) // Not in map</span>
+<span class="fc" id="L70">        int previousX = currentX, previousY = currentY;</span>
+<span class="fc" id="L71">        updatePosition(direction);</span>
+<span class="fc" id="L72">        Tile newTile = getCurrentTile();</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if(newTile == null) // Not in map</span>
         {
-<span class="fc" id="L74">            newTile = getTile(previousX, previousY).GenerateTile();</span>
-<span class="fc" id="L75">            visitedTiles.put(getKey(currentX, currentY), newTile);</span>
-<span class="fc" id="L76">            return newTile.OnEntry();</span>
+<span class="fc" id="L75">            newTile = getTile(previousX, previousY).GenerateTile();</span>
+<span class="fc" id="L76">            visitedTiles.put(getKey(currentX, currentY), newTile);</span>
+<span class="fc" id="L77">            return newTile.OnEntry();</span>
         }
-<span class="fc" id="L78">        return newTile.OnReturn();</span>
+<span class="fc" id="L79">        return newTile.OnReturn();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
