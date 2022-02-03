@@ -8,11 +8,13 @@ public class Map
     private static int currentX = 0, currentY = 0;
 
 
-    public static void init()
+    public static String init()
     {
         final int START_X = 0;
         final int START_Y = 0;
-        visitedTiles.put(getKey(START_X,START_Y), new Grass());
+        Tile boat = new Boat();
+        visitedTiles.put(getKey(START_X,START_Y), boat);
+        return boat.OnEntry();
     }
 
     public static int[] getPosition()
