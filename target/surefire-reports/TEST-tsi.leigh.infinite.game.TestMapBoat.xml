@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="tsi.leigh.infinite.game.TestMap" time="0.023" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="tsi.leigh.infinite.game.TestMapBoat" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.2+8-LTS-86"/>
@@ -61,10 +61,6 @@
     <property name="sun.stdout.encoding" value="cp437"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveWest" time="0.02"/>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveEast" time="0"/>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveSouth" time="0"/>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveNorth" time="0"/>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testMoveCaps" time="0"/>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testMoveGiberish" time="0.003"/>
+  <testcase classname="tsi.leigh.infinite.game.TestMapBoat" name="tsi.leigh.infinite.game.TestMapBoat.testOnReturn" time="0"/>
+  <testcase classname="tsi.leigh.infinite.game.TestMapBoat" name="tsi.leigh.infinite.game.TestMapBoat.testOnEntry" time="0"/>
 </testsuite>

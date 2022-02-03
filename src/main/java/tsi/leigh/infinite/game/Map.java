@@ -14,6 +14,8 @@ public class Map
         final int START_Y = 0;
         Tile boat = new Boat();
         visitedTiles.put(getKey(START_X,START_Y), boat);
+        currentX = 0;
+        currentY = 0;
         return boat.OnEntry();
     }
 

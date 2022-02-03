@@ -2,8 +2,15 @@
 
 <span class="fc" id="L3">public abstract class Tile</span>
 {
-    public abstract String OnEntry();
-    public abstract String OnReturn();
+<span class="fc" id="L5">    protected String entryString = &quot;&quot;, returnString = &quot;&quot;;</span>
+    public String OnEntry()
+    {
+<span class="fc" id="L8">        return entryString;</span>
+    }
+    public String OnReturn()
+    {
+<span class="fc" id="L12">        return returnString;</span>
+    }
     public abstract Tile GenerateTile();
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
