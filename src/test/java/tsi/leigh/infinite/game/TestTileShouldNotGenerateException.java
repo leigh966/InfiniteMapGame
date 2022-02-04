@@ -1,8 +1,11 @@
 package tsi.leigh.infinite.game;
 
+import org.junit.jupiter.api.Test;
+
 class TestTileShouldNotGenerateException
 {
-    void testOnCreate()
+    @Test
+    void testTileShouldNotGenerateException()
     {
         TileShouldNotGenerateException tsnge = new TileShouldNotGenerateException("Nope");
     }
