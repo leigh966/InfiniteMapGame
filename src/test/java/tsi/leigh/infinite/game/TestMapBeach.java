@@ -6,7 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class TestMapBeach
+class TestMapBeach
 {
     // Tests that the correct tiles are being generated either side of the beach line
     @ParameterizedTest

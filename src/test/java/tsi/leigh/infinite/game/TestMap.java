@@ -3,7 +3,7 @@ package tsi.leigh.infinite.game;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TestMap
+class TestMap
 {
 
     @Test

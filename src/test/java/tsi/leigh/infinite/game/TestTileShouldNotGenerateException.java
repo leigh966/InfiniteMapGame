@@ -1,6 +1,6 @@
 package tsi.leigh.infinite.game;
 
-public class TestTileShouldNotGenerateException
+class TestTileShouldNotGenerateException
 {
     void testOnCreate()
     {
