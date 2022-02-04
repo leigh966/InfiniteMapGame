@@ -37,4 +37,17 @@ public class Grass extends Tile
 
         throw new TileShouldNotGenerateException("Grass should never allow you to move off it to an x position less than 2!");
     }
+
+    @Override
+    protected void generateSearchString() {
+        searchString = "You scour the grass ";
+        if(searchObject == null)
+        {
+            searchString += "but find nothing";
+        }
+        else
+        {
+            searchString += "and find " + searchObject.getItemName();
+        }
+    }
 }

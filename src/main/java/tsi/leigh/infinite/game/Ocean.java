@@ -1,5 +1,7 @@
 package tsi.leigh.infinite.game;
 
+import java.util.ArrayList;
+
 public class Ocean extends Tile
 {
     public Ocean()
@@ -13,5 +15,16 @@ public class Ocean extends Tile
 
     {
         throw new TileShouldNotGenerateException("The Ocean should never have its generateTile method called");
+    }
+
+    @Override
+    protected void generateSearchString() {
+        throw new CannotSearchHereException("Searching should never happen in the ocean");
+    }
+
+    @Override
+    public String search(ArrayList<Collectable> inventory)
+    {
+        throw new CannotSearchHereException("Searching should never happen in the ocean");
     }
 }

@@ -1,5 +1,7 @@
 package tsi.leigh.infinite.game;
 
+import java.util.ArrayList;
+
 public class Beach extends Tile
 {
     public Beach()
@@ -7,6 +9,21 @@ public class Beach extends Tile
         tileName = "Beach";
         entryString = "Found beach";
         returnString = "On a familiar patch of beach";
+        searchObject = null;
+    }
+
+    @Override
+    protected void generateSearchString()
+    {
+        searchString = "You run your fingers through the sand and find ";
+        if(searchObject == null)
+        {
+            searchString += "nothing";
+        }
+        else
+        {
+            searchString += searchObject.getItemName();
+        }
     }
 
     @Override
@@ -36,4 +53,5 @@ public class Beach extends Tile
 
 
     }
+
 }

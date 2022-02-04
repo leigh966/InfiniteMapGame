@@ -18,4 +18,17 @@ public class Boat extends Tile
         }
         return new Ocean();
     }
+
+    @Override
+    protected void generateSearchString()
+    {
+        if(searchObject == null)
+        {
+            searchString = "You have already picked up everything useful";
+        }
+        else
+        {
+            searchString = "You pick up your trusty " + searchObject.getItemName();
+        }
+    }
 }

@@ -2,6 +2,7 @@ tsi\leigh\infinite\game\TestMain.class
 tsi\leigh\infinite\game\TestMap.class
 tsi\leigh\infinite\game\TestTileShouldNotGenerateException.class
 tsi\leigh\infinite\game\TestMapBoat.class
+tsi\leigh\infinite\game\TestMapGrass.class
 tsi\leigh\infinite\game\TestMapBeach.class
 tsi\leigh\infinite\game\TestMapBoatLanding.class
 tsi\leigh\infinite\game\TestMapShore.class

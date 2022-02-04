@@ -37,5 +37,18 @@ public class Grass extends Tile
 
 <span class="nc" id="L38">        throw new TileShouldNotGenerateException(&quot;Grass should never allow you to move off it to an x position less than 2!&quot;);</span>
     }
+
+    @Override
+    protected void generateSearchString() {
+<span class="fc" id="L43">        searchString = &quot;You scour the grass &quot;;</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if(searchObject == null)</span>
+        {
+<span class="fc" id="L46">            searchString += &quot;but find nothing&quot;;</span>
+        }
+        else
+        {
+<span class="nc" id="L50">            searchString += &quot;and find &quot; + searchObject.getItemName();</span>
+        }
+<span class="fc" id="L52">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
