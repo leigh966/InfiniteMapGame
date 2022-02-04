@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Grass.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">InfiniteMapGame</a> &gt; <a href="index.source.html" class="el_package">tsi.leigh.infinite.game</a> &gt; <span class="el_source">Grass.java</span></div><h1>Grass.java</h1><pre class="source lang-java linenums">package tsi.leigh.infinite.game;
 
+import java.util.Random;
+
 public class Grass extends Tile
 {
 
     public Grass()
-<span class="nc" id="L7">    {</span>
-<span class="nc" id="L8">        tileName = &quot;Grass&quot;;</span>
-<span class="nc" id="L9">        entryString = &quot;Found grassland&quot;;</span>
-<span class="nc" id="L10">        returnString = &quot;Entered familiar grassland&quot;;</span>
-<span class="nc" id="L11">    }</span>
+<span class="fc" id="L9">    {</span>
+<span class="fc" id="L10">        tileName = &quot;Grass&quot;;</span>
+<span class="fc" id="L11">        entryString = &quot;Found grassland&quot;;</span>
+<span class="fc" id="L12">        returnString = &quot;Entered familiar grassland&quot;;</span>
+<span class="fc" id="L13">    }</span>
 
-    // stub
     public Tile GenerateTile()
     {
-<span class="nc" id="L16">        return new Grass();</span>
+<span class="fc" id="L17">        int currentX = Map.getPosition()[0];</span>
+
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        if(currentX == 2)</span>
+        {
+<span class="nc" id="L21">            return new Beach();</span>
+        }
+
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if(currentX == 3)</span>
+        {
+<span class="fc" id="L26">            double chanceOfBeach = 0.3;</span>
+<span class="fc" id="L27">            double outcome = Math.random();</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            if(outcome &lt; chanceOfBeach)</span>
+            {
+<span class="fc" id="L30">                return new Beach();</span>
+            }
+<span class="fc" id="L32">            return new Grass();</span>
+        }
+
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if(currentX &gt; 3)</span>
+        {
+<span class="fc" id="L37">            return new Grass();</span>
+        }
+
+<span class="nc" id="L40">        throw new TileShouldNotGenerateException(&quot;Grass should never allow you to move off it to an x position less than 2!&quot;);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

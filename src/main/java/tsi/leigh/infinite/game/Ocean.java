@@ -10,7 +10,8 @@ public class Ocean extends Tile
 
 
     public Tile GenerateTile()
+
     {
-        return null;
+        throw new TileShouldNotGenerateException("The Ocean should never have its generateTile method called");
     }
 }

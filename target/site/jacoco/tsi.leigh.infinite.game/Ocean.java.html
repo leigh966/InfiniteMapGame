@@ -10,8 +10,9 @@ public class Ocean extends Tile
 
 
     public Tile GenerateTile()
+
     {
-<span class="nc" id="L14">        return null;</span>
+<span class="nc" id="L15">        throw new TileShouldNotGenerateException(&quot;The Ocean should never have its generateTile method called&quot;);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

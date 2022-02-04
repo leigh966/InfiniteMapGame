@@ -9,10 +9,32 @@ public class Beach extends Tile
 <span class="fc" id="L9">        returnString = &quot;On a familiar patch of beach&quot;;</span>
 <span class="fc" id="L10">    }</span>
 
-    // stub
+
     public Tile GenerateTile()
     {
-<span class="nc" id="L15">        return new Beach();</span>
+<span class="fc" id="L15">        int currentX = Map.getPosition()[0];</span>
+
+<span class="pc bpc" id="L17" title="3 of 5 branches missed.">        switch(currentX)</span>
+        {
+            case 1:
+<span class="nc" id="L20">                return new Shore();</span>
+            case 2:
+<span class="fc" id="L22">                return new Beach();</span>
+            case 3:
+<span class="fc" id="L24">                double chanceOfBeach = 0.3;</span>
+<span class="fc" id="L25">                double outcome = Math.random();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">                if(outcome &lt; 0.3)</span>
+                {
+<span class="fc" id="L28">                    return new Beach();</span>
+                }
+<span class="fc" id="L30">                return new Grass();</span>
+            case 4:
+<span class="nc" id="L32">                return new Grass();</span>
+            default:
+<span class="nc" id="L34">                throw new TileShouldNotGenerateException(&quot;Beach should never allow you to move off it to an x position less than 1 or more than 4!&quot;);</span>
+        }
+
+
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

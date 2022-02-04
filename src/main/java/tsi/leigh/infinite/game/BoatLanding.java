@@ -21,6 +21,6 @@ public class BoatLanding extends Shore
             {
                 return new Shore();
             }
-            throw new RuntimeException("Boat should not be generated again!");
+            throw new TileShouldNotGenerateException("Boat should not be generated again!");
         }
 }
