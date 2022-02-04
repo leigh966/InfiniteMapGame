@@ -80,4 +80,25 @@ public class Map
         }
         return newTile.OnReturn();
     }
+
+    public static int getNewTreasureDelta(int minDelta, int maxDelta)
+    {
+        return (int) ((Math.random()+minDelta)*(maxDelta-minDelta)+minDelta);
+    }
+
+    private static void generateTreasure()
+    {
+        final int minDelta = 3;
+        final int maxDelta = 8;
+        final int minX = 4;
+        int treasureXDelta = getNewTreasureDelta(minDelta, maxDelta);
+        int treasureXPos = currentX - treasureXDelta;
+        if(Math.random()<0.5 || treasureXPos < minX)
+        {
+            treasureXPos = currentX + treasureXDelta;
+        }
+        int treasureYDelta = getNewTreasureDelta(minDelta, maxDelta);
+        treasureYDelta = Math.random()<0.5 ? treasureYDelta : treasureYDelta*-1;
+        int treasureYPos = currentY + treasureYDelta;
+    }
 }

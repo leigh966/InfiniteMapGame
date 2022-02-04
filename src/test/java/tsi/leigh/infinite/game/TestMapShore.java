@@ -42,4 +42,20 @@ class TestMapShore
         Assertions.assertEquals("You run your fingers through the sand and find junk", s);
     }
 
+    @Test
+    void testDigEmpty()
+    {
+        Tile s = new Shore();
+        Assertions.assertEquals("You dig and find nothing", s.dig());
+    }
+
+    @Test
+    void testDigHasSearchable()
+    {
+        Collectable j = new Collectable("junk");
+        Tile s = new Shore(j);
+        Assertions.assertEquals("You're about to dig but notice something on the ground", s.dig());
+
+    }
+
 }

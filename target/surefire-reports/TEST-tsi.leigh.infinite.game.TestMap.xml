@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\leigh\AppData\Local\Temp\surefire2193051899534357743\surefirebooter9774228461015487647.jar C:\Users\leigh\AppData\Local\Temp\surefire2193051899534357743 2022-02-04T15-11-55_590-jvmRun1 surefire3070885265644399272tmp surefire_05230211357114983646tmp"/>
+    <property name="sun.java.command" value="C:\Users\leigh\AppData\Local\Temp\surefire3065476517204200047\surefirebooter5414080215083178061.jar C:\Users\leigh\AppData\Local\Temp\surefire3065476517204200047 2022-02-04T16-37-11_279-jvmRun1 surefire15862514440475634867tmp surefire_015475936167494152663tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="E:\Work\Jobs\TSI\Java\InfiniteMapGame\target\test-classes;E:\Work\Jobs\TSI\Java\InfiniteMapGame\target\classes;C:\Users\leigh\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.2\junit-jupiter-5.8.2.jar;C:\Users\leigh\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\leigh\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\leigh\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\leigh\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\leigh\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\leigh\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\leigh\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\leigh\AppData\Local\Temp\surefire2193051899534357743\surefirebooter9774228461015487647.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\leigh\AppData\Local\Temp\surefire3065476517204200047\surefirebooter5414080215083178061.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.2+8-LTS-86"/>
@@ -60,6 +60,6 @@
   <testcase name="testPositionMoveWest" classname="tsi.leigh.infinite.game.TestMap" time="0"/>
   <testcase name="testPositionMoveNorth" classname="tsi.leigh.infinite.game.TestMap" time="0"/>
   <testcase name="testPositionMoveSouth" classname="tsi.leigh.infinite.game.TestMap" time="0"/>
-  <testcase name="testMoveCaps" classname="tsi.leigh.infinite.game.TestMap" time="0"/>
+  <testcase name="testMoveCaps" classname="tsi.leigh.infinite.game.TestMap" time="0.001"/>
   <testcase name="testMoveGiberish" classname="tsi.leigh.infinite.game.TestMap" time="0.002"/>
 </testsuite>

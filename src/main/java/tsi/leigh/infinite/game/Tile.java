@@ -7,7 +7,7 @@ public abstract class Tile
     protected String tileName;
     protected String entryString = "", returnString = "";
     protected String searchString = "";
-    protected Collectable searchObject = null;
+    protected Collectable searchObject = null, buriedObject = null;
     public String OnEntry()
     {
         return entryString;
@@ -32,6 +32,27 @@ public abstract class Tile
         searchObject = null;
 
         return searchString;
+    }
+    public String dig()
+    {
+        if(searchObject == null) {
+
+            String returnString = "You dig ";
+            if(buriedObject == null)
+            {
+                returnString += "and find nothing";
+            }
+            else {
+                returnString += "something up";
+            }
+            searchObject = buriedObject;
+            buriedObject = null;
+            return returnString;
+        }
+        else
+        {
+            return "You're about to dig but notice something on the ground";
+        }
     }
     protected abstract void init();
 }

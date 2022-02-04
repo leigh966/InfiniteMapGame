@@ -80,5 +80,26 @@ public class Map
         }
 <span class="fc" id="L81">        return newTile.OnReturn();</span>
     }
+
+    public static int getNewTreasureDelta(int minDelta, int maxDelta)
+    {
+<span class="nc" id="L86">        return (int) ((Math.random()+minDelta)*(maxDelta-minDelta)+minDelta);</span>
+    }
+
+    private static void generateTreasure()
+    {
+<span class="nc" id="L91">        final int minDelta = 3;</span>
+<span class="nc" id="L92">        final int maxDelta = 8;</span>
+<span class="nc" id="L93">        final int minX = 4;</span>
+<span class="nc" id="L94">        int treasureXDelta = getNewTreasureDelta(minDelta, maxDelta);</span>
+<span class="nc" id="L95">        int treasureXPos = currentX - treasureXDelta;</span>
+<span class="nc bnc" id="L96" title="All 4 branches missed.">        if(Math.random()&lt;0.5 || treasureXPos &lt; minX)</span>
+        {
+<span class="nc" id="L98">            treasureXPos = currentX + treasureXDelta;</span>
+        }
+<span class="nc" id="L100">        int treasureYDelta = getNewTreasureDelta(minDelta, maxDelta);</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">        treasureYDelta = Math.random()&lt;0.5 ? treasureYDelta : treasureYDelta*-1;</span>
+<span class="nc" id="L102">        int treasureYPos = currentY + treasureYDelta;</span>
+<span class="nc" id="L103">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

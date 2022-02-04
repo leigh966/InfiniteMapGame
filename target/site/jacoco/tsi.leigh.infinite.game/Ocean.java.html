@@ -11,27 +11,34 @@ public class Ocean extends Tile
 <span class="fc" id="L11">    }</span>
 
     @Override
+    public String OnEntry()
+    {
+<span class="fc" id="L16">        Game.die();</span>
+<span class="fc" id="L17">        return entryString;</span>
+    }
+
+    @Override
     protected void init()
     {
-<span class="fc" id="L16">        tileName = &quot;Ocean&quot;;</span>
-<span class="fc" id="L17">        entryString = &quot;You have drowned in the ocean&quot;;</span>
-<span class="fc" id="L18">    }</span>
+<span class="fc" id="L23">        tileName = &quot;Ocean&quot;;</span>
+<span class="fc" id="L24">        entryString = &quot;You have drowned in the ocean&quot;;</span>
+<span class="fc" id="L25">    }</span>
 
     public Tile GenerateTile()
 
     {
-<span class="nc" id="L23">        throw new TileShouldNotGenerateException(&quot;The Ocean should never have its generateTile method called&quot;);</span>
+<span class="nc" id="L30">        throw new TileShouldNotGenerateException(&quot;The Ocean should never have its generateTile method called&quot;);</span>
     }
 
     @Override
     protected void generateSearchString() {
-<span class="nc" id="L28">        throw new CannotSearchHereException(&quot;Searching should never happen in the ocean&quot;);</span>
+<span class="nc" id="L35">        throw new CannotSearchHereException(&quot;Searching should never happen in the ocean&quot;);</span>
     }
 
     @Override
     public String search(ArrayList&lt;Collectable&gt; inventory)
     {
-<span class="nc" id="L34">        throw new CannotSearchHereException(&quot;Searching should never happen in the ocean&quot;);</span>
+<span class="nc" id="L41">        throw new CannotSearchHereException(&quot;Searching should never happen in the ocean&quot;);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

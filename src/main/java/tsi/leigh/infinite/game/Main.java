@@ -1,6 +1,7 @@
 package tsi.leigh.infinite.game;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main
@@ -28,6 +29,8 @@ public class Main
 
     public static void main(String[] args)
     {
+        ArrayList<Collectable> Inventory = new ArrayList<>();
+        Inventory.add(new Shovel());
         System.out.println(Map.init());
         while(!Game.isOver())
         {

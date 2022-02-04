@@ -12,5 +12,9 @@ public class Collectable
     {
         return itemName;
     }
+    public String use()
+    {
+        return "Nothing Happens";
+    }
 
 }
