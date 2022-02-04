@@ -4,6 +4,7 @@ public class Shore extends Beach
 {
     public Shore()
     {
+        tileName = "Shore";
         entryString = "On the shore with nothing but ocean to the west";
         returnString = "Back at the shore";
     }

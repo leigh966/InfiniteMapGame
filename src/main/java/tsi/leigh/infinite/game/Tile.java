@@ -2,6 +2,7 @@ package tsi.leigh.infinite.game;
 
 public abstract class Tile
 {
+    protected String tileName;
     protected String entryString = "", returnString = "";
     public String OnEntry()
     {
@@ -12,4 +13,8 @@ public abstract class Tile
         return returnString;
     }
     public abstract Tile GenerateTile();
+    public String getTileName()
+    {
+        return tileName;
+    }
 }

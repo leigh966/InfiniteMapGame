@@ -43,7 +43,7 @@
     <property name="java.class.path" value="C:\Program Files\Java\apache-maven-3.8.4\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean verify install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-17.0.2"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -61,10 +61,10 @@
     <property name="sun.stdout.encoding" value="cp437"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveSouth" time="0.026"/>
+  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testMoveCaps" time="0.027"/>
+  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testMoveGiberish" time="0.004"/>
   <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveWest" time="0"/>
   <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveEast" time="0"/>
   <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveNorth" time="0"/>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testMoveCaps" time="0"/>
-  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testMoveGiberish" time="0.005"/>
+  <testcase classname="tsi.leigh.infinite.game.TestMap" name="tsi.leigh.infinite.game.TestMap.testPositionMoveSouth" time="0"/>
 </testsuite>

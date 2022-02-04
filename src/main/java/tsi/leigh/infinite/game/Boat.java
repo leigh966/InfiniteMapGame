@@ -4,6 +4,7 @@ public class Boat extends Tile
 {
     public Boat()
     {
+        tileName = "Boat";
         entryString = "Boat washed up on shore";
         returnString = "Back on the boat";
     }

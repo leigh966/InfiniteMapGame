@@ -4,6 +4,7 @@ public class Beach extends Tile
 {
     public Beach()
     {
+        tileName = "Beach";
         entryString = "Found beach";
         returnString = "On a familiar patch of beach";
     }

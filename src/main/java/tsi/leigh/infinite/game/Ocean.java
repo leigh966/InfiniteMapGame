@@ -4,6 +4,7 @@ public class Ocean extends Tile
 {
     public Ocean()
     {
+        tileName = "Ocean";
         entryString = "You have drowned in the ocean";
     }
 
