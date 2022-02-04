@@ -67,4 +67,15 @@ public class TestMapBeach
             Map.move("south");
         }
     }
+
+    @Test
+    void testGenerateShore()
+    {
+        Map.init();
+        Map.move("east");
+        Map.move("east");
+        Map.move("north");
+        Map.move("west");
+        Assertions.assertEquals("Shore", Map.getCurrentTile().getTileName());
+    }
 }
