@@ -7,9 +7,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 public class TestMapBoatLanding
 {
+
     @ParameterizedTest
     @CsvSource({"north,Shore", "east,Beach", "south,Shore", "west,Boat"})
-    public void testMovement(String direction, String expectedTileName)
+    public void TestGenerateTile(String direction, String expectedTileName)
     {
         Map.init();
         Map.move("east"); // Get to Landing
