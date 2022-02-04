@@ -2,10 +2,10 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 InfiniteMapGame,tsi.leigh.infinite.game,BoatLanding,5,30,1,3,1,10,1,3,0,2
 InfiniteMapGame,tsi.leigh.infinite.game,Shore,5,30,1,3,1,10,1,4,0,2
 InfiniteMapGame,tsi.leigh.infinite.game,Tile,0,18,0,0,0,5,0,4,0,4
-InfiniteMapGame,tsi.leigh.infinite.game,Main,62,0,4,0,19,0,6,0,4,0
-InfiniteMapGame,tsi.leigh.infinite.game,Grass,9,45,2,6,2,15,2,4,0,2
-InfiniteMapGame,tsi.leigh.infinite.game,Beach,13,38,3,4,3,13,3,4,0,2
+InfiniteMapGame,tsi.leigh.infinite.game,Main,60,0,4,0,18,0,6,0,4,0
+InfiniteMapGame,tsi.leigh.infinite.game,Grass,16,38,4,4,4,13,3,3,0,2
+InfiniteMapGame,tsi.leigh.infinite.game,Beach,9,42,2,5,2,14,2,5,0,2
 InfiniteMapGame,tsi.leigh.infinite.game,Ocean,5,9,0,0,1,4,1,1,1,1
 InfiniteMapGame,tsi.leigh.infinite.game,TileShouldNotGenerateException,4,0,0,0,2,0,1,0,1,0
 InfiniteMapGame,tsi.leigh.infinite.game,Boat,0,27,0,2,0,9,0,3,0,2
-InfiniteMapGame,tsi.leigh.infinite.game,Map,3,127,0,7,1,34,1,13,1,8
+InfiniteMapGame,tsi.leigh.infinite.game,Map,0,127,0,7,0,35,0,13,0,8

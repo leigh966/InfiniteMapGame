@@ -1,7 +1,5 @@
 package tsi.leigh.infinite.game;
 
-import java.util.Random;
-
 public class Grass extends Tile
 {
 

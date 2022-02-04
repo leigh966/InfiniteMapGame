@@ -7,10 +7,11 @@ public class Map
     private static Hashtable<String, Tile> visitedTiles;
     private static int currentX = 0, currentY = 0;
 
+    private Map(){}
 
     public static String init()
     {
-        visitedTiles = new Hashtable<String, Tile>();
+        visitedTiles = new Hashtable<>();
         final int START_X = 0;
         final int START_Y = 0;
         Tile boat = new Boat();
@@ -67,7 +68,8 @@ public class Map
     public static String move(String direction)
             throws IllegalArgumentException
     {
-        int previousX = currentX, previousY = currentY;
+        int previousX = currentX;
+        int previousY = currentY;
         updatePosition(direction);
         Tile newTile = getCurrentTile();
         if(newTile == null) // Not in map

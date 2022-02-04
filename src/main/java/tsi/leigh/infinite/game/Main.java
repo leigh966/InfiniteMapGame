@@ -1,9 +1,6 @@
 package tsi.leigh.infinite.game;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.InvalidParameterException;
-import java.util.Locale;
+
 import java.util.Scanner;
 
 public class Main
@@ -12,8 +9,7 @@ public class Main
     {
         Scanner scan = new Scanner(System.in);
         System.out.print(prompt);
-        String input = scan.nextLine();
-        return input;
+        return scan.nextLine();
     }
 
 
