@@ -29,8 +29,7 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println(Map.init());
-        Boolean gameOver = false;
-        while(!gameOver)
+        while(!Game.isOver())
         {
             String userInput = getInput(">> ");
             try {

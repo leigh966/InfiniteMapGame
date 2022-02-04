@@ -11,6 +11,13 @@ public class Ocean extends Tile
     }
 
     @Override
+    public String OnEntry()
+    {
+        Game.die();
+        return entryString;
+    }
+
+    @Override
     protected void init()
     {
         tileName = "Ocean";
