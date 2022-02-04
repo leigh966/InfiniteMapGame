@@ -13,16 +13,16 @@ import java.util.Scanner;
     }
 
 
-    private static String parse(String command)
+    public static String parse(String command)
             throws IllegalArgumentException
     {
-<span class="nc" id="L19">        String[] splitCommand = command.toLowerCase().split(&quot; &quot;);</span>
-<span class="nc bnc" id="L20" title="All 2 branches missed.">        switch(splitCommand[0])</span>
+<span class="fc" id="L19">        String[] splitCommand = command.toLowerCase().split(&quot; &quot;);</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        switch(splitCommand[0])</span>
         {
             case &quot;go&quot;, &quot;head&quot;, &quot;walk&quot;:
-<span class="nc" id="L23">                return Map.move(splitCommand[1]);</span>
+<span class="fc" id="L23">                return Map.move(splitCommand[1]);</span>
             default:
-<span class="nc" id="L25">                return &quot;Invalid command&quot;;</span>
+<span class="fc" id="L25">                return &quot;Invalid command&quot;;</span>
         }
     }
 

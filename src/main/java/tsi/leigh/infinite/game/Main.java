@@ -13,7 +13,7 @@ public class Main
     }
 
 
-    private static String parse(String command)
+    public static String parse(String command)
             throws IllegalArgumentException
     {
         String[] splitCommand = command.toLowerCase().split(" ");
