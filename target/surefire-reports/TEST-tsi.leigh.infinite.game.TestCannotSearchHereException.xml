@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tsi.leigh.infinite.game.TestMapBeach" time="0.035" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tsi.leigh.infinite.game.TestCannotSearchHereException" time="0.029" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -56,12 +56,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testGenerateTileGuarenteed{int, String, String}[1]" classname="tsi.leigh.infinite.game.TestMapBeach" time="0.003"/>
-  <testcase name="testGenerateTileGuarenteed{int, String, String}[2]" classname="tsi.leigh.infinite.game.TestMapBeach" time="0.001"/>
-  <testcase name="testGenerateTileGuarenteed{int, String, String}[3]" classname="tsi.leigh.infinite.game.TestMapBeach" time="0.001"/>
-  <testcase name="testGenerateTileGuarenteed{int, String, String}[4]" classname="tsi.leigh.infinite.game.TestMapBeach" time="0.001"/>
-  <testcase name="testSearchEmpty" classname="tsi.leigh.infinite.game.TestMapBeach" time="0"/>
-  <testcase name="testGenerateShore" classname="tsi.leigh.infinite.game.TestMapBeach" time="0.001"/>
-  <testcase name="testLineOnlyGrassAndBeach" classname="tsi.leigh.infinite.game.TestMapBeach" time="0.019"/>
-  <testcase name="testLineHasBoth" classname="tsi.leigh.infinite.game.TestMapBeach" time="0.001"/>
+  <testcase name="TestCannnotSearchHereException" classname="tsi.leigh.infinite.game.TestCannotSearchHereException" time="0.02"/>
 </testsuite>

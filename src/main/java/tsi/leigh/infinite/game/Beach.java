@@ -6,10 +6,14 @@ public class Beach extends Tile
 {
     public Beach()
     {
-        tileName = "Beach";
-        entryString = "Found beach";
-        returnString = "On a familiar patch of beach";
         searchObject = null;
+        init();
+    }
+
+    public Beach(Collectable c)
+    {
+        searchObject = c;
+        init();
     }
 
     @Override
@@ -24,6 +28,14 @@ public class Beach extends Tile
         {
             searchString += searchObject.getItemName();
         }
+    }
+
+    @Override
+    protected void init() {
+        tileName = "Beach";
+        entryString = "Found beach";
+        returnString = "On a familiar patch of beach";
+        generateSearchString();
     }
 
     @Override
@@ -53,5 +65,6 @@ public class Beach extends Tile
 
 
     }
+
 
 }

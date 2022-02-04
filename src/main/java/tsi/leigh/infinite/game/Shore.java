@@ -4,9 +4,22 @@ public class Shore extends Beach
 {
     public Shore()
     {
+        searchObject = null;
+        init();
+    }
+
+    public Shore(Collectable c)
+    {
+        searchObject = c;
+        init();
+    }
+
+    @Override
+    protected void init() {
         tileName = "Shore";
         entryString = "On the shore with nothing but ocean to the west";
         returnString = "Back at the shore";
+        generateSearchString();
     }
 
     @Override

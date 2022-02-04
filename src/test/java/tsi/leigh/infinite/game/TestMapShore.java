@@ -31,4 +31,15 @@ class TestMapShore
         Assertions.assertEquals("You run your fingers through the sand and find nothing", s);
     }
 
+    @Test
+    void testSearchJunk()
+    {
+        ArrayList<Collectable> inventory = new ArrayList<>();
+        Collectable j = new Collectable("junk");
+        Tile beach = new Shore(j);
+        String s = beach.search(inventory);
+        Assertions.assertEquals("junk", inventory.get(0).getItemName());
+        Assertions.assertEquals("You run your fingers through the sand and find junk", s);
+    }
+
 }

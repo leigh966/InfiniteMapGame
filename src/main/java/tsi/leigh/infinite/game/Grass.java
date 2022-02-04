@@ -2,12 +2,25 @@ package tsi.leigh.infinite.game;
 
 public class Grass extends Tile
 {
-
-    public Grass()
+    @Override
+    protected void init()
     {
         tileName = "Grass";
         entryString = "Found grassland";
         returnString = "Entered familiar grassland";
+        generateSearchString();
+    }
+
+    public Grass()
+    {
+        searchObject = null;
+        init();
+    }
+
+    public Grass(Collectable obj)
+    {
+        searchObject = obj;
+        init();
     }
 
     public Tile GenerateTile()

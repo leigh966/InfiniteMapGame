@@ -6,10 +6,16 @@ public class Ocean extends Tile
 {
     public Ocean()
     {
+        searchObject = null;
+        init();
+    }
+
+    @Override
+    protected void init()
+    {
         tileName = "Ocean";
         entryString = "You have drowned in the ocean";
     }
-
 
     public Tile GenerateTile()
 

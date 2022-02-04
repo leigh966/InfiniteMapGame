@@ -4,9 +4,23 @@ public class BoatLanding extends Shore
 {
         public BoatLanding()
         {
+            searchObject = null;
+            init();
+        }
+
+        public BoatLanding(Collectable c)
+        {
+            searchObject = c;
+            init();
+        }
+
+        @Override
+        protected void init()
+        {
             tileName = "BoatLanding";
             entryString = "Landed onshore";
             returnString = "On the shore with the boat to the west";
+            generateSearchString();
         }
 
         @Override

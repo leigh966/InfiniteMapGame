@@ -1,5 +1,6 @@
 tsi\leigh\infinite\game\TestMain.class
 tsi\leigh\infinite\game\TestMap.class
+tsi\leigh\infinite\game\TestCannotSearchHereException.class
 tsi\leigh\infinite\game\TestTileShouldNotGenerateException.class
 tsi\leigh\infinite\game\TestMapBoat.class
 tsi\leigh\infinite\game\TestMapGrass.class

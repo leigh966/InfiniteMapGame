@@ -24,9 +24,14 @@ public abstract class Tile
     protected abstract void generateSearchString();
     public String search (ArrayList<Collectable> inventory)
     {
-        if(searchObject != null) inventory.add(searchObject);
+
+        if(searchObject != null) {
+            inventory.add(searchObject);
+            generateSearchString();
+        }
         searchObject = null;
-        generateSearchString(); // Update the output to reflect that the item is no longer there
+
         return searchString;
     }
+    protected abstract void init();
 }

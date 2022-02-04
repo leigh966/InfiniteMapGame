@@ -4,25 +4,38 @@ public class Shore extends Beach
 {
     public Shore()
 <span class="fc" id="L6">    {</span>
-<span class="fc" id="L7">        tileName = &quot;Shore&quot;;</span>
-<span class="fc" id="L8">        entryString = &quot;On the shore with nothing but ocean to the west&quot;;</span>
-<span class="fc" id="L9">        returnString = &quot;Back at the shore&quot;;</span>
-<span class="fc" id="L10">    }</span>
+<span class="fc" id="L7">        searchObject = null;</span>
+<span class="fc" id="L8">        init();</span>
+<span class="fc" id="L9">    }</span>
+
+    public Shore(Collectable c)
+<span class="fc" id="L12">    {</span>
+<span class="fc" id="L13">        searchObject = c;</span>
+<span class="fc" id="L14">        init();</span>
+<span class="fc" id="L15">    }</span>
+
+    @Override
+    protected void init() {
+<span class="fc" id="L19">        tileName = &quot;Shore&quot;;</span>
+<span class="fc" id="L20">        entryString = &quot;On the shore with nothing but ocean to the west&quot;;</span>
+<span class="fc" id="L21">        returnString = &quot;Back at the shore&quot;;</span>
+<span class="fc" id="L22">        generateSearchString();</span>
+<span class="fc" id="L23">    }</span>
 
     @Override
     public Tile GenerateTile()
     {
-<span class="fc" id="L15">        int currentX = Map.getPosition()[0];</span>
-<span class="pc bpc" id="L16" title="1 of 4 branches missed.">        switch(currentX)</span>
+<span class="fc" id="L28">        int currentX = Map.getPosition()[0];</span>
+<span class="pc bpc" id="L29" title="1 of 4 branches missed.">        switch(currentX)</span>
         {
             case 0:
-<span class="fc" id="L19">                return new Ocean();</span>
+<span class="fc" id="L32">                return new Ocean();</span>
             case 1:
-<span class="fc" id="L21">                return new Shore();</span>
+<span class="fc" id="L34">                return new Shore();</span>
             case 2:
-<span class="fc" id="L23">                return new Beach();</span>
+<span class="fc" id="L36">                return new Beach();</span>
             default:
-<span class="nc" id="L25">                throw new TileShouldNotGenerateException(&quot;You should not be able to move off the shore to x &gt; 1 or x &lt; 0&quot;);</span>
+<span class="nc" id="L38">                throw new TileShouldNotGenerateException(&quot;You should not be able to move off the shore to x &gt; 1 or x &lt; 0&quot;);</span>
         }
     }
 

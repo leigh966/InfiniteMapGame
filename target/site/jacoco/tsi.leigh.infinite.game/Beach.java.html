@@ -6,53 +6,66 @@ public class Beach extends Tile
 {
     public Beach()
 <span class="fc" id="L8">    {</span>
-<span class="fc" id="L9">        tileName = &quot;Beach&quot;;</span>
-<span class="fc" id="L10">        entryString = &quot;Found beach&quot;;</span>
-<span class="fc" id="L11">        returnString = &quot;On a familiar patch of beach&quot;;</span>
-<span class="fc" id="L12">        searchObject = null;</span>
-<span class="fc" id="L13">    }</span>
+<span class="fc" id="L9">        searchObject = null;</span>
+<span class="fc" id="L10">        init();</span>
+<span class="fc" id="L11">    }</span>
+
+    public Beach(Collectable c)
+<span class="nc" id="L14">    {</span>
+<span class="nc" id="L15">        searchObject = c;</span>
+<span class="nc" id="L16">        init();</span>
+<span class="nc" id="L17">    }</span>
 
     @Override
     protected void generateSearchString()
     {
-<span class="fc" id="L18">        searchString = &quot;You run your fingers through the sand and find &quot;;</span>
-<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        if(searchObject == null)</span>
+<span class="fc" id="L22">        searchString = &quot;You run your fingers through the sand and find &quot;;</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if(searchObject == null)</span>
         {
-<span class="fc" id="L21">            searchString += &quot;nothing&quot;;</span>
+<span class="fc" id="L25">            searchString += &quot;nothing&quot;;</span>
         }
         else
         {
-<span class="nc" id="L25">            searchString += searchObject.getItemName();</span>
+<span class="fc" id="L29">            searchString += searchObject.getItemName();</span>
         }
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L31">    }</span>
+
+    @Override
+    protected void init() {
+<span class="fc" id="L35">        tileName = &quot;Beach&quot;;</span>
+<span class="fc" id="L36">        entryString = &quot;Found beach&quot;;</span>
+<span class="fc" id="L37">        returnString = &quot;On a familiar patch of beach&quot;;</span>
+<span class="fc" id="L38">        generateSearchString();</span>
+<span class="fc" id="L39">    }</span>
 
     @Override
     public Tile GenerateTile()
     {
-<span class="fc" id="L32">        int currentX = Map.getPosition()[0];</span>
+<span class="fc" id="L44">        int currentX = Map.getPosition()[0];</span>
 
-<span class="pc bpc" id="L34" title="1 of 5 branches missed.">        switch(currentX)</span>
+<span class="pc bpc" id="L46" title="1 of 5 branches missed.">        switch(currentX)</span>
         {
             case 1:
-<span class="fc" id="L37">                return new Shore();</span>
+<span class="fc" id="L49">                return new Shore();</span>
             case 2:
-<span class="fc" id="L39">                return new Beach();</span>
+<span class="fc" id="L51">                return new Beach();</span>
             case 3:
-<span class="fc" id="L41">                final double chanceOfBeach = 0.3;</span>
-<span class="fc" id="L42">                double outcome = Math.random();</span>
-<span class="fc bfc" id="L43" title="All 2 branches covered.">                if(outcome &lt; chanceOfBeach)</span>
+<span class="fc" id="L53">                final double chanceOfBeach = 0.3;</span>
+<span class="fc" id="L54">                double outcome = Math.random();</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">                if(outcome &lt; chanceOfBeach)</span>
                 {
-<span class="fc" id="L45">                    return new Beach();</span>
+<span class="fc" id="L57">                    return new Beach();</span>
                 }
-<span class="fc" id="L47">                return new Grass();</span>
+<span class="fc" id="L59">                return new Grass();</span>
             case 4:
-<span class="fc" id="L49">                return new Grass();</span>
+<span class="fc" id="L61">                return new Grass();</span>
             default:
-<span class="nc" id="L51">                throw new TileShouldNotGenerateException(&quot;Beach should never allow you to move off it to an x position less than 1 or more than 4!&quot;);</span>
+<span class="nc" id="L63">                throw new TileShouldNotGenerateException(&quot;Beach should never allow you to move off it to an x position less than 1 or more than 4!&quot;);</span>
         }
 
 
     }
+
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

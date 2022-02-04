@@ -4,24 +4,38 @@ public class BoatLanding extends Shore
 {
         public BoatLanding()
 <span class="fc" id="L6">        {</span>
-<span class="fc" id="L7">            tileName = &quot;BoatLanding&quot;;</span>
-<span class="fc" id="L8">            entryString = &quot;Landed onshore&quot;;</span>
-<span class="fc" id="L9">            returnString = &quot;On the shore with the boat to the west&quot;;</span>
-<span class="fc" id="L10">        }</span>
+<span class="fc" id="L7">            searchObject = null;</span>
+<span class="fc" id="L8">            init();</span>
+<span class="fc" id="L9">        }</span>
+
+        public BoatLanding(Collectable c)
+<span class="fc" id="L12">        {</span>
+<span class="fc" id="L13">            searchObject = c;</span>
+<span class="fc" id="L14">            init();</span>
+<span class="fc" id="L15">        }</span>
+
+        @Override
+        protected void init()
+        {
+<span class="fc" id="L20">            tileName = &quot;BoatLanding&quot;;</span>
+<span class="fc" id="L21">            entryString = &quot;Landed onshore&quot;;</span>
+<span class="fc" id="L22">            returnString = &quot;On the shore with the boat to the west&quot;;</span>
+<span class="fc" id="L23">            generateSearchString();</span>
+<span class="fc" id="L24">        }</span>
 
         @Override
         public Tile GenerateTile()
         {
-<span class="fc" id="L15">            int currentX = Map.getPosition()[0];</span>
-<span class="fc bfc" id="L16" title="All 2 branches covered.">            if(currentX &gt; 1)</span>
+<span class="fc" id="L29">            int currentX = Map.getPosition()[0];</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            if(currentX &gt; 1)</span>
             {
-<span class="fc" id="L18">                return new Beach();</span>
+<span class="fc" id="L32">                return new Beach();</span>
             }
-<span class="pc bpc" id="L20" title="1 of 2 branches missed.">            else if(currentX == 1)</span>
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">            else if(currentX == 1)</span>
             {
-<span class="fc" id="L22">                return new Shore();</span>
+<span class="fc" id="L36">                return new Shore();</span>
             }
-<span class="nc" id="L24">            throw new TileShouldNotGenerateException(&quot;Boat should not be generated again!&quot;);</span>
+<span class="nc" id="L38">            throw new TileShouldNotGenerateException(&quot;Boat should not be generated again!&quot;);</span>
         }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

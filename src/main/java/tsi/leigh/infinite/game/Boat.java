@@ -2,11 +2,25 @@ package tsi.leigh.infinite.game;
 
 public class Boat extends Tile
 {
-    public Boat()
+    @Override
+    protected void init()
     {
         tileName = "Boat";
         entryString = "Boat washed up on shore";
         returnString = "Back on the boat";
+        generateSearchString();
+    }
+
+    public Boat()
+    {
+        searchObject = null;
+        init();
+    }
+
+    public Boat(Collectable c)
+    {
+        searchObject = c;
+        init();
     }
 
     public Tile GenerateTile()

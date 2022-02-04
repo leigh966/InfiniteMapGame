@@ -24,10 +24,15 @@ import java.util.ArrayList;
     protected abstract void generateSearchString();
     public String search (ArrayList&lt;Collectable&gt; inventory)
     {
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        if(searchObject != null) inventory.add(searchObject);</span>
-<span class="fc" id="L28">        searchObject = null;</span>
-<span class="fc" id="L29">        generateSearchString(); // Update the output to reflect that the item is no longer there</span>
-<span class="fc" id="L30">        return searchString;</span>
+
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        if(searchObject != null) {</span>
+<span class="fc" id="L29">            inventory.add(searchObject);</span>
+<span class="fc" id="L30">            generateSearchString();</span>
+        }
+<span class="fc" id="L32">        searchObject = null;</span>
+
+<span class="fc" id="L34">        return searchString;</span>
     }
+    protected abstract void init();
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

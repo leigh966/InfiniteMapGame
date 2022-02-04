@@ -16,4 +16,16 @@ public class TestMapGrass
         Assertions.assertTrue(inventory.isEmpty()); // No item should have been added to the inventory
         Assertions.assertEquals("You scour the grass but find nothing", s);
     }
+
+    @Test
+    void testSearchJunk()
+    {
+        ArrayList<Collectable> inventory = new ArrayList<>();
+        Collectable j = new Collectable("junk");
+        Tile beach = new Grass(j);
+        String s = beach.search(inventory);
+        Assertions.assertEquals("junk", inventory.get(0).getItemName());
+        Assertions.assertEquals("You scour the grass and find junk", s);
+    }
+
 }
