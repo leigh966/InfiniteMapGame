@@ -10,7 +10,7 @@ public class TestMapBoatLanding
 
     @ParameterizedTest
     @CsvSource({"north,Shore", "east,Beach", "south,Shore", "west,Boat"})
-    public void TestGenerateTile(String direction, String expectedTileName)
+    void TestGenerateTile(String direction, String expectedTileName)
     {
         Map.init();
         Map.move("east"); // Get to Landing

@@ -11,7 +11,7 @@ public class TestMapBeach
     // Tests that the correct tiles are being generated either side of the beach line
     @ParameterizedTest
     @CsvSource({"2,north,Beach", "2,south,Beach", "3,east,Grass", "3,west,Beach"})
-    public void testGenerateTileGuarenteed(int x, String direction, String expected)
+    void testGenerateTileGuarenteed(int x, String direction, String expected)
     {
         Map.init();
         for(int i = 0; i < x; i++)
@@ -23,7 +23,7 @@ public class TestMapBeach
     }
 
     @Test
-    public void testLineHasBoth()
+    void testLineHasBoth()
     {
         Map.init();
         Boolean hasBeach = false, hasGrass = false;
@@ -49,7 +49,7 @@ public class TestMapBeach
     }
 
     @Test
-    public void testLineOnlyGrassAndBeach()
+    void testLineOnlyGrassAndBeach()
     {
         Map.init();
 

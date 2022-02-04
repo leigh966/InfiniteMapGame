@@ -8,7 +8,7 @@ public class TestMapShore
 {
     @ParameterizedTest
     @CsvSource({"north,Shore", "south,Shore", "east,Beach", "west,Ocean"})
-    public void testGenerateTiles(String direction, String expected)
+    void testGenerateTiles(String direction, String expected)
     {
         Map.init();
         Map.move("east");

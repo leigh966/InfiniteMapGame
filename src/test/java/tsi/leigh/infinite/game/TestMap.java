@@ -7,7 +7,7 @@ public class TestMap
 {
 
     @Test
-    public void testMoveCaps()
+    void testMoveCaps()
     {
         Map.init();
         int startX = Map.getPosition()[0];
@@ -17,7 +17,7 @@ public class TestMap
     }
 
     @Test
-    public void testPositionMoveWest()
+    void testPositionMoveWest()
     {
         Map.init();
         int startX = Map.getPosition()[0];
@@ -27,7 +27,7 @@ public class TestMap
     }
 
     @Test
-    public void testPositionMoveEast()
+    void testPositionMoveEast()
     {
         Map.init();
         int startX = Map.getPosition()[0];
@@ -38,7 +38,7 @@ public class TestMap
 
 
     @Test
-    public void testPositionMoveNorth()
+    void testPositionMoveNorth()
     {
         Map.init();
         int startY = Map.getPosition()[1];
@@ -48,7 +48,7 @@ public class TestMap
     }
 
     @Test
-    public void testPositionMoveSouth()
+    void testPositionMoveSouth()
     {
         Map.init();
         int startY = Map.getPosition()[1];
@@ -58,7 +58,7 @@ public class TestMap
     }
 
     @Test
-    public void testMoveGiberish()
+    void testMoveGiberish()
     {
         Map.init();
         Assertions.assertThrows(IllegalArgumentException.class, () -> {Map.move("blah");});

@@ -9,14 +9,14 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class TestMapBoat
 {
     @Test
-    public void testOnEntry()
+    void testOnEntry()
     {
         String s = Map.init();
         Assertions.assertEquals("Boat washed up on shore",s);
     }
 
     @Test
-    public void testOnReturn()
+    void testOnReturn()
     {
         Map.init();
         Map.move("east");
@@ -26,14 +26,14 @@ public class TestMapBoat
 
     @ParameterizedTest
     @ValueSource(strings = {"north", "south", "west"})
-    public void testOceanGeneration(String directions)
+    void testOceanGeneration(String directions)
     {
         Map.init();
         Assertions.assertEquals("You have drowned in the ocean", Map.move(directions));
     }
 
     @Test
-    public void testLandingGeneration()
+    void testLandingGeneration()
     {
         Map.init();
         Assertions.assertEquals("Landed onshore", Map.move("East"));

@@ -19,7 +19,7 @@ public class Grass extends Tile
 <span class="nc" id="L19">            return new Beach();</span>
         }
 
-<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        if(currentX == 3)</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if(currentX == 3)</span>
         {
 <span class="fc" id="L24">            double chanceOfBeach = 0.3;</span>
 <span class="fc" id="L25">            double outcome = Math.random();</span>
@@ -30,9 +30,9 @@ public class Grass extends Tile
 <span class="fc" id="L30">            return new Grass();</span>
         }
 
-<span class="nc bnc" id="L33" title="All 2 branches missed.">        if(currentX &gt; 3)</span>
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        if(currentX &gt; 3)</span>
         {
-<span class="nc" id="L35">            return new Grass();</span>
+<span class="fc" id="L35">            return new Grass();</span>
         }
 
 <span class="nc" id="L38">        throw new TileShouldNotGenerateException(&quot;Grass should never allow you to move off it to an x position less than 2!&quot;);</span>

@@ -14,7 +14,7 @@ public class Beach extends Tile
     {
 <span class="fc" id="L15">        int currentX = Map.getPosition()[0];</span>
 
-<span class="pc bpc" id="L17" title="2 of 5 branches missed.">        switch(currentX)</span>
+<span class="pc bpc" id="L17" title="3 of 5 branches missed.">        switch(currentX)</span>
         {
             case 1:
 <span class="nc" id="L20">                return new Shore();</span>
@@ -29,7 +29,7 @@ public class Beach extends Tile
                 }
 <span class="fc" id="L30">                return new Grass();</span>
             case 4:
-<span class="fc" id="L32">                return new Grass();</span>
+<span class="nc" id="L32">                return new Grass();</span>
             default:
 <span class="nc" id="L34">                throw new TileShouldNotGenerateException(&quot;Beach should never allow you to move off it to an x position less than 1 or more than 4!&quot;);</span>
         }
