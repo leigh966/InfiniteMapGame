@@ -7,6 +7,7 @@ public abstract class Tile
     protected String tileName;
     protected String entryString = "", returnString = "";
     protected String searchString = "";
+    private Boolean dug = false;
     protected Collectable searchObject = null, buriedObject = null;
     public String OnEntry()
     {
@@ -36,7 +37,7 @@ public abstract class Tile
     public String dig()
     {
         if(searchObject == null) {
-
+            dug = true;
             String returnString = "You dig ";
             if(buriedObject == null)
             {
@@ -55,4 +56,8 @@ public abstract class Tile
         }
     }
     protected abstract void init();
+    public Boolean getDug()
+    {
+        return dug;
+    }
 }

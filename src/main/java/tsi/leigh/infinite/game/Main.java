@@ -13,6 +13,7 @@ public class Main
         return scan.nextLine();
     }
 
+    static ArrayList<Collectable> Inventory = new ArrayList<>();
 
     public static String parse(String command)
             throws IllegalArgumentException
@@ -22,6 +23,13 @@ public class Main
         {
             case "go", "head", "walk":
                 return Map.move(splitCommand[1]);
+            case "search":
+                return Map.getCurrentTile().search(Inventory);
+            case "use":
+                if(splitCommand[1].equals("shovel"))
+                {
+                    return Inventory.get(0).use();
+                }
             default:
                 return "Invalid command";
         }
@@ -29,7 +37,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        ArrayList<Collectable> Inventory = new ArrayList<>();
+
         Inventory.add(new Shovel());
         System.out.println(Map.init());
         while(!Game.isOver())

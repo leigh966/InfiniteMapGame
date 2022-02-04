@@ -23,6 +23,12 @@ public class Grass extends Tile
         init();
     }
 
+    public Grass(Collectable searchable, Collectable diggable)
+    {
+        searchObject = searchable;
+        buriedObject = diggable;
+    }
+
     public Tile GenerateTile()
     {
         int currentX = Map.getPosition()[0];

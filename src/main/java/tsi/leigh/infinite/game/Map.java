@@ -6,6 +6,7 @@ public class Map
 {
     private static Hashtable<String, Tile> visitedTiles;
     private static int currentX = 0, currentY = 0;
+    private static int treasureX, treasureY;
 
     private Map(){}
 
@@ -18,6 +19,7 @@ public class Map
         visitedTiles.put(getKey(START_X,START_Y), boat);
         currentX = 0;
         currentY = 0;
+        generateTreasure();
         return boat.OnEntry();
     }
 
@@ -88,8 +90,8 @@ public class Map
 
     private static void generateTreasure()
     {
-        final int minDelta = 3;
-        final int maxDelta = 8;
+        final int minDelta = 5;
+        final int maxDelta = 10;
         final int minX = 4;
         int treasureXDelta = getNewTreasureDelta(minDelta, maxDelta);
         int treasureXPos = currentX - treasureXDelta;
@@ -100,5 +102,30 @@ public class Map
         int treasureYDelta = getNewTreasureDelta(minDelta, maxDelta);
         treasureYDelta = Math.random()<0.5 ? treasureYDelta : treasureYDelta*-1;
         int treasureYPos = currentY + treasureYDelta;
+
+        Tile treasureTile = visitedTiles.get(getKey(treasureXPos, treasureYPos));
+
+        // Look for an untaken square
+        while(treasureTile != null)
+        {
+            treasureXPos += minDelta;
+            if(Math.random()<0.5) {
+                treasureYPos += minDelta;
+            }else{
+                treasureYPos -= minDelta;
+            }
+            treasureTile = visitedTiles.get(getKey(treasureXPos, treasureYPos));
+        }
+        treasureX = treasureXPos;
+        treasureY = treasureYPos;
+        visitedTiles.put(getKey(treasureXPos,treasureYPos), new Grass(null, new TreasureChest()));
+
+    }
+
+
+    public static int[] getTreasureLocation()
+    {
+        int[] position = {treasureX, treasureY};
+        return position;
     }
 }

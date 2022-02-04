@@ -3,6 +3,8 @@ package tsi.leigh.infinite.game;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 class TestMap
 {
 
@@ -62,6 +64,26 @@ class TestMap
     {
         Map.init();
         Assertions.assertThrows(IllegalArgumentException.class, () -> {Map.move("blah");});
+    }
+
+
+    @Test
+    void testDigTreasure()
+    {
+        Map.init();
+        ArrayList<Collectable> inventory = new ArrayList<>();
+        inventory.add(new Shovel());
+        int[] treasureLocation = Map.getTreasureLocation();
+        for(int i = 0; i < treasureLocation[0]; i++)
+        {
+            Map.move("east");
+        }
+        for(int i = 0; i < treasureLocation[1]; i++)
+        {
+            Map.move("north");
+        }
+        inventory.get(0).use();
+        Map.getCurrentTile().search(inventory);
     }
 
 }

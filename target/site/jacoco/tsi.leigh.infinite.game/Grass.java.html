@@ -23,45 +23,51 @@ public class Grass extends Tile
 <span class="fc" id="L23">        init();</span>
 <span class="fc" id="L24">    }</span>
 
+    public Grass(Collectable searchable, Collectable diggable)
+<span class="fc" id="L27">    {</span>
+<span class="fc" id="L28">        searchObject = searchable;</span>
+<span class="fc" id="L29">        buriedObject = diggable;</span>
+<span class="fc" id="L30">    }</span>
+
     public Tile GenerateTile()
     {
-<span class="fc" id="L28">        int currentX = Map.getPosition()[0];</span>
+<span class="fc" id="L34">        int currentX = Map.getPosition()[0];</span>
 
-<span class="pc bpc" id="L30" title="1 of 2 branches missed.">        if(currentX == 2)</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if(currentX == 2)</span>
         {
-<span class="nc" id="L32">            return new Beach();</span>
+<span class="nc" id="L38">            return new Beach();</span>
         }
 
-<span class="fc bfc" id="L35" title="All 2 branches covered.">        if(currentX == 3)</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if(currentX == 3)</span>
         {
-<span class="fc" id="L37">            double chanceOfBeach = 0.3;</span>
-<span class="fc" id="L38">            double outcome = Math.random();</span>
-<span class="fc bfc" id="L39" title="All 2 branches covered.">            if(outcome &lt; chanceOfBeach)</span>
+<span class="fc" id="L43">            double chanceOfBeach = 0.3;</span>
+<span class="fc" id="L44">            double outcome = Math.random();</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">            if(outcome &lt; chanceOfBeach)</span>
             {
-<span class="fc" id="L41">                return new Beach();</span>
+<span class="fc" id="L47">                return new Beach();</span>
             }
-<span class="fc" id="L43">            return new Grass();</span>
+<span class="fc" id="L49">            return new Grass();</span>
         }
 
-<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        if(currentX &gt; 3)</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">        if(currentX &gt; 3)</span>
         {
-<span class="fc" id="L48">            return new Grass();</span>
+<span class="fc" id="L54">            return new Grass();</span>
         }
 
-<span class="nc" id="L51">        throw new TileShouldNotGenerateException(&quot;Grass should never allow you to move off it to an x position less than 2!&quot;);</span>
+<span class="nc" id="L57">        throw new TileShouldNotGenerateException(&quot;Grass should never allow you to move off it to an x position less than 2!&quot;);</span>
     }
 
     @Override
     protected void generateSearchString() {
-<span class="fc" id="L56">        searchString = &quot;You scour the grass &quot;;</span>
-<span class="fc bfc" id="L57" title="All 2 branches covered.">        if(searchObject == null)</span>
+<span class="fc" id="L62">        searchString = &quot;You scour the grass &quot;;</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if(searchObject == null)</span>
         {
-<span class="fc" id="L59">            searchString += &quot;but find nothing&quot;;</span>
+<span class="fc" id="L65">            searchString += &quot;but find nothing&quot;;</span>
         }
         else
         {
-<span class="fc" id="L63">            searchString += &quot;and find &quot; + searchObject.getItemName();</span>
+<span class="fc" id="L69">            searchString += &quot;and find &quot; + searchObject.getItemName();</span>
         }
-<span class="fc" id="L65">    }</span>
+<span class="fc" id="L71">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

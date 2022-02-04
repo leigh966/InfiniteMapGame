@@ -6,100 +6,127 @@ public class Map
 {
     private static Hashtable&lt;String, Tile&gt; visitedTiles;
 <span class="fc" id="L8">    private static int currentX = 0, currentY = 0;</span>
+    private static int treasureX, treasureY;
 
     private Map(){}
 
     public static String init()
     {
-<span class="fc" id="L14">        visitedTiles = new Hashtable&lt;&gt;();</span>
-<span class="fc" id="L15">        final int START_X = 0;</span>
-<span class="fc" id="L16">        final int START_Y = 0;</span>
-<span class="fc" id="L17">        Tile boat = new Boat();</span>
-<span class="fc" id="L18">        visitedTiles.put(getKey(START_X,START_Y), boat);</span>
-<span class="fc" id="L19">        currentX = 0;</span>
-<span class="fc" id="L20">        currentY = 0;</span>
-<span class="fc" id="L21">        return boat.OnEntry();</span>
+<span class="fc" id="L15">        visitedTiles = new Hashtable&lt;&gt;();</span>
+<span class="fc" id="L16">        final int START_X = 0;</span>
+<span class="fc" id="L17">        final int START_Y = 0;</span>
+<span class="fc" id="L18">        Tile boat = new Boat();</span>
+<span class="fc" id="L19">        visitedTiles.put(getKey(START_X,START_Y), boat);</span>
+<span class="fc" id="L20">        currentX = 0;</span>
+<span class="fc" id="L21">        currentY = 0;</span>
+<span class="fc" id="L22">        generateTreasure();</span>
+<span class="fc" id="L23">        return boat.OnEntry();</span>
     }
 
     public static int[] getPosition()
     {
-<span class="fc" id="L26">        int[] position = {currentX, currentY};</span>
-<span class="fc" id="L27">        return position;</span>
+<span class="fc" id="L28">        int[] position = {currentX, currentY};</span>
+<span class="fc" id="L29">        return position;</span>
     }
 
     private static String getKey(int x, int y)
     {
-<span class="fc" id="L32">        return Integer.toString(x) + &quot;,&quot; + Integer.toString(y);</span>
+<span class="fc" id="L34">        return Integer.toString(x) + &quot;,&quot; + Integer.toString(y);</span>
     }
 
     public static Tile getTile(int x, int y)
     {
-<span class="fc" id="L37">        return visitedTiles.get(getKey(x,y));</span>
+<span class="fc" id="L39">        return visitedTiles.get(getKey(x,y));</span>
     }
 
     public static Tile getCurrentTile()
     {
-<span class="fc" id="L42">        return getTile(currentX, currentY);</span>
+<span class="fc" id="L44">        return getTile(currentX, currentY);</span>
     }
 
     private static void updatePosition(String direction)
             throws IllegalArgumentException
     {
-<span class="fc" id="L48">        direction = direction.toLowerCase();</span>
-<span class="fc bfc" id="L49" title="All 5 branches covered.">        switch (direction)</span>
+<span class="fc" id="L50">        direction = direction.toLowerCase();</span>
+<span class="fc bfc" id="L51" title="All 5 branches covered.">        switch (direction)</span>
         {
             case &quot;north&quot;:
-<span class="fc" id="L52">                currentY++;</span>
-<span class="fc" id="L53">                break;</span>
+<span class="fc" id="L54">                currentY++;</span>
+<span class="fc" id="L55">                break;</span>
             case &quot;east&quot;:
-<span class="fc" id="L55">                currentX++;</span>
-<span class="fc" id="L56">                break;</span>
+<span class="fc" id="L57">                currentX++;</span>
+<span class="fc" id="L58">                break;</span>
             case &quot;south&quot;:
-<span class="fc" id="L58">                currentY--;</span>
-<span class="fc" id="L59">                break;</span>
+<span class="fc" id="L60">                currentY--;</span>
+<span class="fc" id="L61">                break;</span>
             case &quot;west&quot;:
-<span class="fc" id="L61">                currentX--;</span>
-<span class="fc" id="L62">                break;</span>
+<span class="fc" id="L63">                currentX--;</span>
+<span class="fc" id="L64">                break;</span>
             default:
-<span class="fc" id="L64">                throw new IllegalArgumentException(&quot;'&quot; +direction +&quot;' is not a valid direction&quot;);</span>
+<span class="fc" id="L66">                throw new IllegalArgumentException(&quot;'&quot; +direction +&quot;' is not a valid direction&quot;);</span>
         }
-<span class="fc" id="L66">    }</span>
+<span class="fc" id="L68">    }</span>
 
     public static String move(String direction)
             throws IllegalArgumentException
     {
-<span class="fc" id="L71">        int previousX = currentX;</span>
-<span class="fc" id="L72">        int previousY = currentY;</span>
-<span class="fc" id="L73">        updatePosition(direction);</span>
-<span class="fc" id="L74">        Tile newTile = getCurrentTile();</span>
-<span class="fc bfc" id="L75" title="All 2 branches covered.">        if(newTile == null) // Not in map</span>
+<span class="fc" id="L73">        int previousX = currentX;</span>
+<span class="fc" id="L74">        int previousY = currentY;</span>
+<span class="fc" id="L75">        updatePosition(direction);</span>
+<span class="fc" id="L76">        Tile newTile = getCurrentTile();</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        if(newTile == null) // Not in map</span>
         {
-<span class="fc" id="L77">            newTile = getTile(previousX, previousY).GenerateTile();</span>
-<span class="fc" id="L78">            visitedTiles.put(getKey(currentX, currentY), newTile);</span>
-<span class="fc" id="L79">            return newTile.OnEntry();</span>
+<span class="fc" id="L79">            newTile = getTile(previousX, previousY).GenerateTile();</span>
+<span class="fc" id="L80">            visitedTiles.put(getKey(currentX, currentY), newTile);</span>
+<span class="fc" id="L81">            return newTile.OnEntry();</span>
         }
-<span class="fc" id="L81">        return newTile.OnReturn();</span>
+<span class="fc" id="L83">        return newTile.OnReturn();</span>
     }
 
     public static int getNewTreasureDelta(int minDelta, int maxDelta)
     {
-<span class="nc" id="L86">        return (int) ((Math.random()+minDelta)*(maxDelta-minDelta)+minDelta);</span>
+<span class="fc" id="L88">        return (int) ((Math.random()+minDelta)*(maxDelta-minDelta)+minDelta);</span>
     }
 
     private static void generateTreasure()
     {
-<span class="nc" id="L91">        final int minDelta = 3;</span>
-<span class="nc" id="L92">        final int maxDelta = 8;</span>
-<span class="nc" id="L93">        final int minX = 4;</span>
-<span class="nc" id="L94">        int treasureXDelta = getNewTreasureDelta(minDelta, maxDelta);</span>
-<span class="nc" id="L95">        int treasureXPos = currentX - treasureXDelta;</span>
-<span class="nc bnc" id="L96" title="All 4 branches missed.">        if(Math.random()&lt;0.5 || treasureXPos &lt; minX)</span>
+<span class="fc" id="L93">        final int minDelta = 5;</span>
+<span class="fc" id="L94">        final int maxDelta = 10;</span>
+<span class="fc" id="L95">        final int minX = 4;</span>
+<span class="fc" id="L96">        int treasureXDelta = getNewTreasureDelta(minDelta, maxDelta);</span>
+<span class="fc" id="L97">        int treasureXPos = currentX - treasureXDelta;</span>
+<span class="pc bpc" id="L98" title="1 of 4 branches missed.">        if(Math.random()&lt;0.5 || treasureXPos &lt; minX)</span>
         {
-<span class="nc" id="L98">            treasureXPos = currentX + treasureXDelta;</span>
+<span class="fc" id="L100">            treasureXPos = currentX + treasureXDelta;</span>
         }
-<span class="nc" id="L100">        int treasureYDelta = getNewTreasureDelta(minDelta, maxDelta);</span>
-<span class="nc bnc" id="L101" title="All 2 branches missed.">        treasureYDelta = Math.random()&lt;0.5 ? treasureYDelta : treasureYDelta*-1;</span>
-<span class="nc" id="L102">        int treasureYPos = currentY + treasureYDelta;</span>
-<span class="nc" id="L103">    }</span>
+<span class="fc" id="L102">        int treasureYDelta = getNewTreasureDelta(minDelta, maxDelta);</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        treasureYDelta = Math.random()&lt;0.5 ? treasureYDelta : treasureYDelta*-1;</span>
+<span class="fc" id="L104">        int treasureYPos = currentY + treasureYDelta;</span>
+
+<span class="fc" id="L106">        Tile treasureTile = visitedTiles.get(getKey(treasureXPos, treasureYPos));</span>
+
+        // Look for an untaken square
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">        while(treasureTile != null)</span>
+        {
+<span class="nc" id="L111">            treasureXPos += minDelta;</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">            if(Math.random()&lt;0.5) {</span>
+<span class="nc" id="L113">                treasureYPos += minDelta;</span>
+            }else{
+<span class="nc" id="L115">                treasureYPos -= minDelta;</span>
+            }
+<span class="nc" id="L117">            treasureTile = visitedTiles.get(getKey(treasureXPos, treasureYPos));</span>
+        }
+<span class="fc" id="L119">        treasureX = treasureXPos;</span>
+<span class="fc" id="L120">        treasureY = treasureYPos;</span>
+<span class="fc" id="L121">        visitedTiles.put(getKey(treasureXPos,treasureYPos), new Grass(null, new TreasureChest()));</span>
+
+<span class="fc" id="L123">    }</span>
+
+
+    public static int[] getTreasureLocation()
+    {
+<span class="fc" id="L128">        int[] position = {treasureX, treasureY};</span>
+<span class="fc" id="L129">        return position;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

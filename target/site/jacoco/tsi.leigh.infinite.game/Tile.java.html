@@ -7,53 +7,58 @@ import java.util.ArrayList;
     protected String tileName;
 <span class="fc" id="L8">    protected String entryString = &quot;&quot;, returnString = &quot;&quot;;</span>
 <span class="fc" id="L9">    protected String searchString = &quot;&quot;;</span>
-<span class="fc" id="L10">    protected Collectable searchObject = null, buriedObject = null;</span>
+<span class="fc" id="L10">    private Boolean dug = false;</span>
+<span class="fc" id="L11">    protected Collectable searchObject = null, buriedObject = null;</span>
     public String OnEntry()
     {
-<span class="fc" id="L13">        return entryString;</span>
+<span class="fc" id="L14">        return entryString;</span>
     }
     public String OnReturn()
     {
-<span class="fc" id="L17">        return returnString;</span>
+<span class="fc" id="L18">        return returnString;</span>
     }
     public abstract Tile GenerateTile() ;
     public String getTileName()
     {
-<span class="fc" id="L22">        return tileName;</span>
+<span class="fc" id="L23">        return tileName;</span>
     }
     protected abstract void generateSearchString();
     public String search (ArrayList&lt;Collectable&gt; inventory)
     {
 
-<span class="fc bfc" id="L28" title="All 2 branches covered.">        if(searchObject != null) {</span>
-<span class="fc" id="L29">            inventory.add(searchObject);</span>
-<span class="fc" id="L30">            generateSearchString();</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if(searchObject != null) {</span>
+<span class="fc" id="L30">            inventory.add(searchObject);</span>
+<span class="fc" id="L31">            generateSearchString();</span>
         }
-<span class="fc" id="L32">        searchObject = null;</span>
+<span class="fc" id="L33">        searchObject = null;</span>
 
-<span class="fc" id="L34">        return searchString;</span>
+<span class="fc" id="L35">        return searchString;</span>
     }
     public String dig()
     {
-<span class="fc bfc" id="L38" title="All 2 branches covered.">        if(searchObject == null) {</span>
-
-<span class="fc" id="L40">            String returnString = &quot;You dig &quot;;</span>
-<span class="pc bpc" id="L41" title="1 of 2 branches missed.">            if(buriedObject == null)</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if(searchObject == null) {</span>
+<span class="fc" id="L40">            dug = true;</span>
+<span class="fc" id="L41">            String returnString = &quot;You dig &quot;;</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">            if(buriedObject == null)</span>
             {
-<span class="fc" id="L43">                returnString += &quot;and find nothing&quot;;</span>
+<span class="fc" id="L44">                returnString += &quot;and find nothing&quot;;</span>
             }
             else {
-<span class="nc" id="L46">                returnString += &quot;something up&quot;;</span>
+<span class="nc" id="L47">                returnString += &quot;something up&quot;;</span>
             }
-<span class="fc" id="L48">            searchObject = buriedObject;</span>
-<span class="fc" id="L49">            buriedObject = null;</span>
-<span class="fc" id="L50">            return returnString;</span>
+<span class="fc" id="L49">            searchObject = buriedObject;</span>
+<span class="fc" id="L50">            buriedObject = null;</span>
+<span class="fc" id="L51">            return returnString;</span>
         }
         else
         {
-<span class="fc" id="L54">            return &quot;You're about to dig but notice something on the ground&quot;;</span>
+<span class="fc" id="L55">            return &quot;You're about to dig but notice something on the ground&quot;;</span>
         }
     }
     protected abstract void init();
+    public Boolean getDug()
+    {
+<span class="nc" id="L61">        return dug;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
