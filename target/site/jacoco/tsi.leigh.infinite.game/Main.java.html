@@ -33,16 +33,17 @@ import java.util.Scanner;
     public static void main(String[] args)
     {
 <span class="nc" id="L35">        System.out.println(Map.init());</span>
-        while(true)
+<span class="nc" id="L36">        Boolean gameOver = false;</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        while(!gameOver)</span>
         {
-<span class="nc" id="L38">            String userInput = getInput(&quot;&gt;&gt; &quot;);</span>
+<span class="nc" id="L39">            String userInput = getInput(&quot;&gt;&gt; &quot;);</span>
             try {
-<span class="nc" id="L40">                System.out.println(parse(userInput));</span>
-<span class="nc" id="L41">            }catch(IllegalArgumentException IAE)</span>
+<span class="nc" id="L41">                System.out.println(parse(userInput));</span>
+<span class="nc" id="L42">            }catch(IllegalArgumentException IAE)</span>
             {
-<span class="nc" id="L43">                System.out.println(IAE.getMessage());</span>
-<span class="nc" id="L44">            }</span>
-<span class="nc" id="L45">        }</span>
-    }
+<span class="nc" id="L44">                System.out.println(IAE.getMessage());</span>
+<span class="nc" id="L45">            }</span>
+<span class="nc" id="L46">        }</span>
+<span class="nc" id="L47">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

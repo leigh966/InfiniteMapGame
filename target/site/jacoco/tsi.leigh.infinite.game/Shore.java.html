@@ -9,10 +9,21 @@ public class Shore extends Beach
 <span class="fc" id="L9">        returnString = &quot;Back at the shore&quot;;</span>
 <span class="fc" id="L10">    }</span>
 
-    // stub
+    @Override
     public Tile GenerateTile()
     {
-<span class="nc" id="L15">        return new Shore();</span>
+<span class="fc" id="L15">        int currentX = Map.getPosition()[0];</span>
+<span class="pc bpc" id="L16" title="1 of 4 branches missed.">        switch(currentX)</span>
+        {
+            case 0:
+<span class="fc" id="L19">                return new Ocean();</span>
+            case 1:
+<span class="fc" id="L21">                return new Shore();</span>
+            case 2:
+<span class="fc" id="L23">                return new Beach();</span>
+            default:
+<span class="nc" id="L25">                throw new TileShouldNotGenerateException(&quot;You should not be able to move off the shore to x &gt; 1 or x &lt; 0&quot;);</span>
+        }
     }
 
 }

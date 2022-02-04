@@ -9,7 +9,7 @@ public class Beach extends Tile
         returnString = "On a familiar patch of beach";
     }
 
-
+    @Override
     public Tile GenerateTile()
     {
         int currentX = Map.getPosition()[0];
@@ -21,9 +21,9 @@ public class Beach extends Tile
             case 2:
                 return new Beach();
             case 3:
-                double chanceOfBeach = 0.3;
+                final double chanceOfBeach = 0.3;
                 double outcome = Math.random();
-                if(outcome < 0.3)
+                if(outcome < chanceOfBeach)
                 {
                     return new Beach();
                 }

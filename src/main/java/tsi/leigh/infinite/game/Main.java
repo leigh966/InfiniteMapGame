@@ -33,7 +33,8 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println(Map.init());
-        while(true)
+        Boolean gameOver = false;
+        while(!gameOver)
         {
             String userInput = getInput(">> ");
             try {

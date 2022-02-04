@@ -9,7 +9,7 @@ public class Beach extends Tile
 <span class="fc" id="L9">        returnString = &quot;On a familiar patch of beach&quot;;</span>
 <span class="fc" id="L10">    }</span>
 
-
+    @Override
     public Tile GenerateTile()
     {
 <span class="fc" id="L15">        int currentX = Map.getPosition()[0];</span>
@@ -21,9 +21,9 @@ public class Beach extends Tile
             case 2:
 <span class="fc" id="L22">                return new Beach();</span>
             case 3:
-<span class="fc" id="L24">                double chanceOfBeach = 0.3;</span>
+<span class="fc" id="L24">                final double chanceOfBeach = 0.3;</span>
 <span class="fc" id="L25">                double outcome = Math.random();</span>
-<span class="fc bfc" id="L26" title="All 2 branches covered.">                if(outcome &lt; 0.3)</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">                if(outcome &lt; chanceOfBeach)</span>
                 {
 <span class="fc" id="L28">                    return new Beach();</span>
                 }

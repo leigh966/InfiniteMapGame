@@ -9,7 +9,7 @@ public class BoatLanding extends Shore
             returnString = "On the shore with the boat to the west";
         }
 
-
+        @Override
         public Tile GenerateTile()
         {
             int currentX = Map.getPosition()[0];
